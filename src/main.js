@@ -71,6 +71,9 @@ const translations = {
     'footer.title': "Let's talk",
     'footer.body': 'Open to junior security engineering roles and internships.',
     'footer.email': 'Email',
+    'footer.aria.email': 'Email David Ledesma',
+    'footer.aria.github': 'GitHub profile',
+    'footer.aria.linkedin': 'LinkedIn profile',
   },
 
   es: {
@@ -143,6 +146,9 @@ const translations = {
     'footer.title': 'Hablemos',
     'footer.body': 'Abierto a puestos junior de ingeniería de seguridad y a prácticas.',
     'footer.email': 'Correo',
+    'footer.aria.email': 'Enviar correo a David Ledesma',
+    'footer.aria.github': 'Perfil de GitHub',
+    'footer.aria.linkedin': 'Perfil de LinkedIn',
   },
 }
 
@@ -210,6 +216,11 @@ function applyLanguage(lang) {
   document.querySelectorAll('[data-i18n]').forEach((el) => {
     const value = dict[el.dataset.i18n]
     if (typeof value === 'string') el.textContent = value
+  })
+
+  document.querySelectorAll('[data-i18n-aria]').forEach((el) => {
+    const value = dict[el.dataset.i18nAria]
+    if (typeof value === 'string') el.setAttribute('aria-label', value)
   })
 
   document.title = dict.metaTitle

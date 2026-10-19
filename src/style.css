@@ -23,6 +23,11 @@
   --ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+:root[data-lang] .btn-icon,
+.footer-links img {
+  filter: invert(1);
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     --bg: #faf9f7;
@@ -32,6 +37,11 @@
     --muted: #5d636d;
     --accent: #a3621c;
     --accent-soft: rgba(163, 98, 28, 0.10);
+  }
+
+  :root[data-lang] .btn-icon,
+  .footer-links img {
+    filter: invert(0);
   }
 }
 
@@ -694,5 +704,54 @@ svg {
 
   .section:has(> .card) > .card {
     align-self: stretch; /* equal-height cards */
+  }
+}
+
+/* ================================================================== *
+ * Icons
+ * ================================================================== */
+
+/* Inside buttons: sized to the text, and the button needs a gap now that
+   it holds two children. */
+.btn {
+  gap: 8px;
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+/* Footer: icon-only links, always in a row regardless of viewport.
+   This overrides the column layout they have below 1024px. */
+.footer-links {
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: none;   /* the underline hover doesn't apply to icons */
+}
+
+.footer-links img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.62;
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.footer-links a:hover img {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .footer-links a:hover img {
+    transform: none;
   }
 }

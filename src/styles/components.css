@@ -24,25 +24,10 @@
   height: 60px;
 }
 
-.mark {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  transition: color 0.2s var(--ease);
-}
-
-.mark:hover {
-  color: var(--accent);
-}
-
 .site-nav {
   display: flex;
   align-items: center;
   gap: 22px;
-  margin-left: auto;
-  margin-right: 22px;
 }
 
 .site-nav a {
@@ -481,7 +466,6 @@
 @media (max-width: 560px) {
   .site-nav {
     gap: 14px;
-    margin-right: 14px;
   }
 
   .card-meta {

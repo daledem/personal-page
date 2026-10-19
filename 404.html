@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Page not found — David Ledesma</title>
+    <meta name="description" content="That page does not exist." />
+    <meta name="robots" content="noindex" />
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="icon" type="image/svg+xml" href="{{BASE}}favicon.svg" />
+
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body data-page="404">
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+    <!-- @include header.html -->
+
+    <main id="main">
+      <section class="container error-page">
+        <p class="error-code rise rise-1" aria-hidden="true">404</p>
+        <h1 class="error-title rise rise-2" data-i18n="404.title">Page not found</h1>
+        <p class="error-body rise" data-i18n="404.body">
+          The link may be broken, or the page may have moved.
+        </p>
+        <a class="btn btn-primary rise" href="{{BASE}}">
+          <span data-i18n="404.cta">Back to home</span>
+        </a>
+      </section>
+    </main>
+
+    <!-- @include footer.html -->
+  </body>
+</html>

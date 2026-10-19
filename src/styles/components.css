@@ -478,3 +478,37 @@
     flex-direction: column;
   }
 }
+
+/* --- 404 ---------------------------------------------------------- */
+
+.error-page {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-height: clamp(420px, 60vh, 640px);
+  padding-block: clamp(64px, 12vh, 120px);
+}
+
+.error-code {
+  font-family: var(--font-mono);
+  font-size: clamp(4rem, 14vw, 8rem);
+  line-height: 1;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  color: var(--border);
+  margin-bottom: 8px;
+}
+
+.error-title {
+  font-family: var(--font-mono);
+  font-size: clamp(1.4rem, 3.5vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+}
+
+.error-body {
+  color: var(--muted);
+  max-width: 46ch;
+  margin-bottom: 28px;
+}

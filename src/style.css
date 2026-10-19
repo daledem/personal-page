@@ -200,10 +200,11 @@ svg {
 }
 
 .hero-name {
-  font-size: clamp(2.4rem, 7vw, 3.9rem);
+  font-family: var(--font-mono);
+  font-size: clamp(2.2rem, 6.5vw, 3.8rem);
   line-height: 1.05;
-  letter-spacing: -0.03em;
-  font-weight: 700;
+  letter-spacing: -0.04em;
+  font-weight: 1;
   margin-bottom: 14px;
 }
 
@@ -611,7 +612,7 @@ svg {
   }
 
   .hero-name {
-    font-size: clamp(3.1rem, 5.2vw, 4.9rem);
+    font-size: clamp(2.4rem, 6vw, 5rem);
   }
 
   .hero-pitch {
@@ -753,5 +754,48 @@ svg {
 @media (prefers-reduced-motion: reduce) {
   .footer-links a:hover img {
     transform: none;
+  }
+}
+
+/* ================================================================== *
+ * Typewriter name
+ *
+ * The h1 keeps its real text (SEO, no-JS, screen readers). JS clears and
+ * retypes it. The h1 carries aria-label so assistive tech reads the full
+ * name once rather than per character.
+ * ================================================================== */
+
+.typewriter {
+  display: inline-block;
+  min-height: 1em;   /* keeps the line height stable while empty */
+}
+
+/* Caret — sits immediately after the last typed character */
+.typewriter::after {
+  content: "";
+  display: inline-block;
+  width: 0.15ch;
+  height: 0.86em;
+  margin-left: 0.1em;
+  vertical-align: -0.04em;
+  background: var(--accent);
+  animation: caret 1.05s steps(1, end) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* Re-time the rest of the hero so it follows the typing rather than
+   overlapping it. The name takes ~770ms (14 chars x 55ms) from 240ms. */
+.rise-3 { animation-delay: 1000ms; }   /* role   — was 190ms */
+.rise-4 { animation-delay: 1150ms; }   /* pitch  — was 270ms */
+.rise-5 { animation-delay: 1300ms; }   /* buttons — was 350ms */
+
+@media (prefers-reduced-motion: reduce) {
+  .typewriter::after {
+    display: none;
   }
 }

@@ -294,3 +294,29 @@ if (prefersReducedMotion || !('IntersectionObserver' in window)) {
 
 const yearEl = document.getElementById('year')
 if (yearEl) yearEl.textContent = String(new Date().getFullYear())
+
+
+/* ------------------------------------------------------------------ *
+ * 6. Typewriter name
+ * ------------------------------------------------------------------ */
+
+const typewriter = document.querySelector('.typewriter')
+
+if (typewriter) {
+  const fullText = (typewriter.dataset.text || typewriter.textContent).trim()
+
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    typewriter.textContent = ''
+
+    const START_DELAY = 240
+    const CHAR_DELAY = 55
+
+    setTimeout(() => {
+      let index = 0
+      const timer = setInterval(() => {
+        typewriter.textContent = fullText.slice(0, ++index)
+        if (index >= fullText.length) clearInterval(timer)
+      }, CHAR_DELAY)
+    }, START_DELAY)
+  }
+}

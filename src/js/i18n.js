@@ -19,7 +19,7 @@ const translations = {
   en: {
     'page.home.title': 'David Ledesma',
     'page.home.description':
-      'Cibersecurity Engineer with a Software Engineering background. SIEM monitoring, zero-trust IAM and network segmentation.',
+      'Cybersecurity student with a Software Engineering background, focused on blue team: detection, monitoring and incident response.',
     'page.projects.title': 'Projects — David Ledesma',
     'page.projects.description':
       'Hands-on infrastructure and security work by David Ledesma.',
@@ -32,16 +32,16 @@ const translations = {
     'nav.projects': 'Projects',
 
     'hero.location': 'Valencia, Spain',
-    'hero.role': 'Cibersecurity Engineer',
+    'hero.role': 'Cibersecurity Student',
     'hero.pitch':
-      'I sit between software engineering and security operations — building systems, then hardening them.',
+      "Cybersecurity student with a Software Engineering background, moving toward blue team: detection, monitoring, incident response. I'm looking for a first role where I can learn from people who do this every day.",
     'hero.cta.contact': 'Get in touch',
 
     'about.title': 'About',
     'about.body':
-      "I hold a degree in Software Engineering and I am currently studying a Master's in Cybersecurity and Cyberintelligence. My day-to-day work has been SIEM monitoring, zero-trust identity in Active Directory and network segmentation — the practical side of keeping an infrastructure trustworthy.",
+      "I'm finishing a Master's in Cybersecurity and Cyberintelligence, after a degree in Software Engineering. What draws me to blue team is the detective work: reading telemetry, spotting the anomaly that doesn't belong, and working out why. My placements gave me a first taste of it (SIEM monitoring, zero-trust identity in Active Directory, network segmentation) and that's the direction I want to keep going.",
     'about.body2':
-      'Outside of work I run my own hardened lab: self-hosted services, a full SIEM stack and automated deployment, because I would rather learn a system by breaking and rebuilding it.',
+      "Outside of my studies I run a hardened lab of my own: self-hosted services, a full SIEM stack, automated deployment. I'd rather learn a system by breaking it and rebuilding it than by reading about it.",
 
     'experience.title': 'Experience',
     'experience.ssh.role': 'Junior ICT Network Security Engineer',
@@ -120,8 +120,8 @@ const translations = {
   es: {
     'page.home.title': 'David Ledesma',
     'page.home.description':
-      'Ingeniero junior de seguridad de redes TIC con formación en Ingeniería del Software. Monitorización SIEM, IAM de confianza cero y segmentación de redes.',
-    'page.projects.title': 'Proyectos — David Ledesma',
+      'Estudiante de ciberseguridad con formación en Ingeniería del Software, orientado al blue team: detección, monitorización y respuesta a incidentes.',
+    'page.projects.title': 'Proyectos',
     'page.projects.description':
       'Trabajo práctico de infraestructura y seguridad de David Ledesma.',
 
@@ -133,16 +133,16 @@ const translations = {
     'nav.projects': 'Proyectos',
 
     'hero.location': 'Valencia, España',
-    'hero.role': 'Ingeniero Junior de Seguridad de Redes TIC',
+    'hero.role': 'Estudiante de ciberseguridad',
     'hero.pitch':
-      'Me muevo entre la ingeniería del software y las operaciones de seguridad: construyo sistemas y después los endurezco.',
+      'Estudiante de ciberseguridad con formación en Ingeniería del Software, orientado al blue team: detección, monitorización y respuesta a incidentes. Busco un primer puesto donde aprender de quien lo hace a diario.',
     'hero.cta.contact': 'Contacto',
 
     'about.title': 'Sobre mí',
     'about.body':
-      'Soy graduado en Ingeniería del Software y actualmente curso un Máster en Ciberseguridad y Ciberinteligencia. Mi trabajo diario ha sido la monitorización SIEM, la identidad de confianza cero en Active Directory y la segmentación de redes: la parte práctica de mantener una infraestructura fiable.',
+      'Estoy terminando un Máster en Ciberseguridad y Ciberinteligencia, después del Grado en Ingeniería del Software. Lo que me atrae del blue team es el trabajo de detective: leer telemetría, detectar la anomalía que no encaja y entender por qué. Mis prácticas me dieron un primer contacto (monitorización SIEM, identidad de confianza cero en Active Directory, segmentación de redes) y es la dirección en la que quiero seguir.',
     'about.body2':
-      'Fuera del trabajo mantengo mi propio laboratorio endurecido: servicios autoalojados, una pila SIEM completa y despliegue automatizado, porque prefiero aprender un sistema rompiéndolo y reconstruyéndolo.',
+      'Fuera de los estudios mantengo un laboratorio endurecido propio: servicios autoalojados, una pila SIEM completa, despliegue automatizado. Prefiero aprender un sistema rompiéndolo y reconstruyéndolo que leyéndolo.',
 
     'experience.title': 'Experiencia',
     'experience.ssh.role': 'Ingeniero Junior de Seguridad de Redes TIC',

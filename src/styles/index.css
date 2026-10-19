@@ -1,0 +1,16 @@
+/* ================================================================== *
+ * Stylesheet entry point.
+ *
+ * Imported once from src/main.js. Vite bundles all of these into a
+ * single stylesheet at build time, so the split costs nothing at
+ * runtime — it exists purely so each concern has its own file.
+ *
+ * ORDER MATTERS. Later files override earlier ones at equal
+ * specificity, which is what the wide-layout and reduced-motion
+ * overrides rely on.
+ * ================================================================== */
+
+@import './tokens.css';
+@import './base.css';
+@import './components.css';
+@import './motion.css';

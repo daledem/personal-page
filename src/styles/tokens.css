@@ -1,0 +1,43 @@
+/* ================================================================== *
+ * Design tokens
+ *
+ * This is the file to edit when you want a different palette.
+ * Only --bg and --accent define the character; the rest are support.
+ * ================================================================== */
+
+:root {
+  --bg: #131417;
+  --surface: #1b1d21;
+  --border: #2b2e34;
+  --text: #e9ebee;
+  --muted: #9ba1ab;
+  --accent: #d99a4e;
+  --accent-soft: rgba(217, 154, 78, 0.12);
+
+  --radius: 14px;
+  --radius-sm: 9px;
+  --max-width: 1400px;
+
+  --font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas,
+    'Liberation Mono', monospace;
+
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --icon-filter: invert(1);
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #faf9f7;
+    --surface: #ffffff;
+    --border: #e2dfd9;
+    --text: #16181c;
+    --muted: #5d636d;
+    --accent: #a3621c;
+    --accent-soft: rgba(163, 98, 28, 0.10);
+
+    --icon-filter: none;
+  }
+}

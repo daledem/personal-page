@@ -1,0 +1,496 @@
+/* ================================================================== *
+ * Components
+ *
+ * Header, hero, buttons, cards, panel, chips, icons — then the wide
+ * layouts at the bottom, which override the single-column defaults.
+ * ================================================================== */
+
+/* --- Header ------------------------------------------------------- */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: color-mix(in srgb, var(--bg) 85%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  height: 60px;
+}
+
+.mark {
+  font-family: var(--font-mono);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  transition: color 0.2s var(--ease);
+}
+
+.mark:hover {
+  color: var(--accent);
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: auto;
+  margin-right: 22px;
+}
+
+.site-nav a {
+  font-size: 0.86rem;
+  color: var(--muted);
+  padding-block: 4px;
+  border-bottom: 1px solid transparent;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease);
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current='page'] {
+  color: var(--text);
+  border-bottom-color: var(--accent);
+}
+
+.lang-toggle {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 6px 14px;
+  cursor: pointer;
+  transition: color 0.2s var(--ease), border-color 0.2s var(--ease),
+    background-color 0.2s var(--ease);
+}
+
+.lang-toggle:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  background: var(--accent-soft);
+}
+
+/* --- Hero --------------------------------------------------------- */
+
+.hero {
+  padding-block: clamp(72px, 12vh, 132px) clamp(56px, 9vh, 96px);
+}
+
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.hero-name {
+  font-family: var(--font-mono);
+  font-size: clamp(2.2rem, 6.5vw, 3.8rem);
+  line-height: 1.05;
+  letter-spacing: -0.04em;
+  font-weight: 1;
+  margin-bottom: 14px;
+}
+
+/* Non-animated page titles (inner pages) reuse .hero-name sizing. */
+.page-title {
+  letter-spacing: -0.02em;
+}
+
+.hero-role {
+  font-size: clamp(1.02rem, 2.4vw, 1.2rem);
+  font-weight: 500;
+  color: var(--accent);
+  margin-bottom: 22px;
+}
+
+.hero-pitch {
+  font-size: clamp(1rem, 2.3vw, 1.1rem);
+  color: var(--muted);
+  max-width: 54ch;
+  margin-bottom: 34px;
+}
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* --- Buttons ------------------------------------------------------ */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease),
+    background-color 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: var(--bg);
+  font-weight: 600;
+}
+
+.btn-primary:hover {
+  color: var(--bg);
+  filter: brightness(1.08);
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  filter: var(--icon-filter);
+}
+
+/* --- Cards -------------------------------------------------------- */
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  transition: border-color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.card + .card {
+  margin-top: 14px;
+}
+
+.card:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+  transform: translateY(-2px);
+}
+
+.card-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 20px;
+  margin-bottom: 16px;
+}
+
+.card-title {
+  font-size: 1.02rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.card-org {
+  font-size: 0.9rem;
+  color: var(--accent);
+  margin-top: 3px;
+}
+
+.card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.card-note {
+  font-size: 0.9rem;
+  color: var(--muted);
+  max-width: 62ch;
+}
+
+/* --- Panel -------------------------------------------------------- */
+
+.panel {
+  background: linear-gradient(180deg, var(--accent-soft), transparent 70%);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+
+.panel-intro {
+  font-size: 0.95rem;
+  color: var(--text);
+  max-width: 62ch;
+  margin-bottom: 18px;
+}
+
+/* --- Skills ------------------------------------------------------- */
+
+.skill-group + .skill-group {
+  margin-top: 22px;
+}
+
+.skill-label {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chips li {
+  font-size: 0.82rem;
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  color: var(--muted);
+  transition: border-color 0.2s var(--ease), color 0.2s var(--ease);
+}
+
+.chips li:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* --- Footer ------------------------------------------------------- */
+
+.site-footer {
+  border-top: 1px solid var(--border);
+  padding-block: clamp(48px, 8vh, 72px) 32px;
+  margin-top: clamp(36px, 6vh, 56px);
+}
+
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 28px;
+}
+
+.footer-title {
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.footer-body {
+  font-size: 0.92rem;
+  color: var(--muted);
+  max-width: 34ch;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  color: var(--muted);
+}
+
+/* --- Icon-only footer links --------------------------------------- */
+
+.footer-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 18px;
+}
+
+.footer-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-links img {
+  width: 22px;
+  height: 22px;
+  opacity: 0.62;
+  filter: var(--icon-filter);
+  transition: opacity 0.2s var(--ease), transform 0.2s var(--ease);
+}
+
+.footer-links a:hover img {
+  opacity: 1;
+  transform: translateY(-1px);
+}
+
+/* ================================================================== *
+ * Wide layouts
+ *
+ * The base design is a single ~760px column. Past ~1024px that reads
+ * as sparse, so the page restructures instead of stretching: section
+ * titles move into a left rail, cards go two-up, prose splits.
+ * ================================================================== */
+
+@media (min-width: 1024px) {
+  .section {
+    display: grid;
+    grid-template-columns: 180px minmax(0, 1fr);
+    column-gap: clamp(32px, 5vw, 88px);
+    align-items: start;
+  }
+
+  .section-title {
+    grid-column: 1;
+    grid-row: 1;
+    margin-bottom: 0;
+    padding-top: 5px;
+  }
+
+  .section > :not(.section-title) {
+    grid-column: 2;
+  }
+
+  .hero {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(200px, 280px);
+    column-gap: clamp(40px, 6vw, 104px);
+    align-items: end;
+  }
+
+  .hero > .kicker,
+  .hero > .hero-name,
+  .hero > .hero-role,
+  .hero > .hero-pitch {
+    grid-column: 1;
+  }
+
+  .hero-name {
+    font-size: clamp(2.4rem, 6vw, 5rem);
+  }
+
+  .hero-pitch {
+    max-width: 56ch;
+    margin-bottom: 0;
+  }
+
+  .hero-actions {
+    grid-column: 2;
+    grid-row: 1 / span 4;
+    align-self: end;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prose {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: clamp(32px, 4vw, 64px);
+    align-items: start;
+  }
+
+  .prose p {
+    max-width: none;
+  }
+
+  .prose p + p {
+    margin-top: 0;
+  }
+
+  .panel {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+    column-gap: clamp(28px, 4vw, 56px);
+    align-items: start;
+  }
+
+  .panel-intro {
+    max-width: none;
+    margin-bottom: 0;
+  }
+
+  .section:has(> .skill-group) {
+    grid-template-columns: 180px repeat(3, minmax(0, 1fr));
+    column-gap: clamp(24px, 3.5vw, 56px);
+  }
+
+  .section:has(> .skill-group) > .skill-group:nth-of-type(1) { grid-column: 2; grid-row: 1; }
+  .section:has(> .skill-group) > .skill-group:nth-of-type(2) { grid-column: 3; grid-row: 1; }
+  .section:has(> .skill-group) > .skill-group:nth-of-type(3) { grid-column: 4; grid-row: 1; }
+
+  .section:has(> .skill-group) > .skill-group + .skill-group {
+    margin-top: 0;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section:has(> .card) {
+    grid-template-columns: 180px repeat(2, minmax(0, 1fr));
+    column-gap: clamp(28px, 3vw, 48px);
+  }
+
+  .section:has(> .card) > .card:nth-of-type(1) {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .section:has(> .card) > .card:nth-of-type(2) {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .section:has(> .card) > .card + .card {
+    margin-top: 0;
+  }
+
+  .section:has(> .card) > .card {
+    align-self: stretch;
+  }
+}
+
+/* --- Small screens ------------------------------------------------ */
+
+@media (max-width: 560px) {
+  .site-nav {
+    gap: 14px;
+    margin-right: 14px;
+  }
+
+  .card-meta {
+    align-items: flex-start;
+    flex-direction: row;
+    gap: 10px;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
+}

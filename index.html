@@ -4,20 +4,19 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>David Ledesma — Network Security Engineer</title>
+    <title>David Ledesma</title>
     <meta
       name="description"
-      content="Junior ICT Network Security Engineer with a Software Engineering background. SIEM monitoring, zero-trust IAM and network segmentation."
+      content="Cibersecurity Engineer with a Software Engineering background. SIEM monitoring, zero-trust IAM and network segmentation."
     />
     <meta name="author" content="David Ledesma" />
     <meta name="color-scheme" content="dark light" />
 
-    <!-- Social preview -->
     <meta property="og:type" content="profile" />
     <meta property="og:title" content="David Ledesma" />
     <meta
       property="og:description"
-      content="Junior ICT Network Security Engineer with a Software Engineering background."
+      content="Cibersecurity Engineer with a Software Engineering background."
     />
     <meta name="twitter:card" content="summary" />
 
@@ -26,38 +25,30 @@
     <script type="module" src="/src/main.js"></script>
   </head>
 
-  <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+  <body data-page="home">
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
-    <header class="site-header">
-      <div class="container header-inner">
-        <a class="mark" href="#top" aria-label="David Ledesma — home">DL</a>
-        <button
-          id="lang-toggle"
-          class="lang-toggle"
-          type="button"
-          lang="es"
-          aria-label="Switch to Spanish"
-        >
-          ES
-        </button>
-      </div>
-    </header>
+    <!-- @include header.html -->
 
     <main id="main">
       <!-- HERO -->
       <section id="top" class="hero container">
         <p class="kicker rise rise-1" data-i18n="hero.location">Valencia, Spain</p>
+
         <h1 class="hero-name" aria-label="David Ledesma">
-          <span class="typewriter" data-text="David Ledesma" aria-hidden="true">David Ledesma</span>
+          <span class="typewriter" data-text="David Ledesma" aria-hidden="true">
+            David Ledesma
+          </span>
         </h1>
+
         <p class="hero-role rise rise-3" data-i18n="hero.role">
-          Junior ICT Network Security Engineer
+          Cibersecurity Engineer
         </p>
         <p class="hero-pitch rise rise-4" data-i18n="hero.pitch">
           I sit between software engineering and security operations — building systems,
           then hardening them.
         </p>
+
         <div class="hero-actions rise rise-5">
           <a class="btn btn-primary" href="mailto:david.ledesma.moracia@gmail.com">
             <img class="btn-icon" src="./email.svg" alt="" aria-hidden="true" />
@@ -74,7 +65,7 @@
           </a>
           <a
             class="btn"
-            href="https://www.linkedin.com/in/david-ledesma-1881b0358"
+            href="https://www.linkedin.com/in/david-ledesma/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -227,9 +218,7 @@
             <li data-i18n="lab.b3">
               Elastic SIEM stack for real-time log aggregation and file integrity monitoring.
             </li>
-            <li data-i18n="lab.b4">
-              UFW firewalls, Let's Encrypt TLS and VLAN segmentation.
-            </li>
+            <li data-i18n="lab.b4">UFW firewalls, Let's Encrypt TLS and VLAN segmentation.</li>
             <li data-i18n="lab.b5">
               Bash automation for reproducible deployment and fast disaster recovery.
             </li>
@@ -280,52 +269,6 @@
       </section>
     </main>
 
-    <footer class="site-footer">
-      <div class="container footer-inner reveal">
-        <div>
-          <h2 class="footer-title" data-i18n="footer.title">Let's talk</h2>
-          <p class="footer-body" data-i18n="footer.body">
-            Open to junior security engineering roles and internships.
-          </p>
-        </div>
-        <ul class="footer-links">
-          <li>
-            <a
-              href="mailto:david.ledesma.moracia@gmail.com"
-              data-i18n-aria="footer.aria.email"
-              aria-label="Email David Ledesma"
-            >
-              <img src="./email.svg" alt="" aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/daledem"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n-aria="footer.aria.github"
-              aria-label="GitHub profile"
-            >
-              <img src="./github.svg" alt="" aria-hidden="true" />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/david-ledesma-1881b0358"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-i18n-aria="footer.aria.linkedin"
-              aria-label="LinkedIn profile"
-            >
-              <img src="./linkedin.svg" alt="" aria-hidden="true" />
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="container footer-bottom">
-        <p lang="es">Valencia, España</p>
-        <p>© <span id="year">2026</span> David Ledesma</p>
-      </div>
-    </footer>
+    <!-- @include footer.html -->
   </body>
 </html>

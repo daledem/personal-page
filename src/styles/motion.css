@@ -1,0 +1,97 @@
+/* ================================================================== *
+ * Motion
+ *
+ * Intentionally restrained: opacity and small translate offsets only.
+ * No large-scale transforms — those are the vestibular triggers named
+ * by the prefers-reduced-motion specification.
+ *
+ * The reduced-motion block is LAST on purpose. At equal specificity,
+ * later source order wins; moving it earlier silently breaks it.
+ * ================================================================== */
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.rise {
+  animation: rise 620ms var(--ease) both;
+}
+
+.rise-1 { animation-delay: 40ms; }
+.rise-2 { animation-delay: 110ms; }
+
+/* .rise-3 / -4 / -5 are re-timed further down to follow the typewriter. */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 560ms var(--ease), transform 560ms var(--ease);
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* --- Typewriter name ---------------------------------------------- */
+
+.typewriter {
+  display: inline-block;
+  min-height: 1em;
+}
+
+.typewriter::after {
+  content: '';
+  display: inline-block;
+  width: 0.1ch;
+  height: 0.86em;
+  margin-left: 0.1em;
+  vertical-align: -0.04em;
+  background: var(--accent);
+  animation: caret 1.05s steps(1, end) infinite;
+}
+
+@keyframes caret {
+  50% {
+    opacity: 0;
+  }
+}
+
+/* The name takes ~770ms (14 chars x 55ms) starting at 240ms, so the
+   rest of the hero is sequenced after it rather than overlapping. */
+.rise-3 { animation-delay: 1000ms; }
+.rise-4 { animation-delay: 1150ms; }
+.rise-5 { animation-delay: 1300ms; }
+
+/* --- Reduced motion ----------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .rise,
+  .reveal {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .typewriter::after {
+    display: none;
+  }
+
+  .btn:hover,
+  .card:hover,
+  .footer-links a:hover img {
+    transform: none;
+  }
+}

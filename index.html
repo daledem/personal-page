@@ -1,13 +1,312 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>personal-page</title>
-  </head>
-  <body>
-    <div id="app"></div>
+
+    <title>David Ledesma — Network Security Engineer</title>
+    <meta
+      name="description"
+      content="Junior ICT Network Security Engineer with a Software Engineering background. SIEM monitoring, zero-trust IAM and network segmentation."
+    />
+    <meta name="author" content="David Ledesma" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Social preview -->
+    <meta property="og:type" content="profile" />
+    <meta property="og:title" content="David Ledesma" />
+    <meta
+      property="og:description"
+      content="Junior ICT Network Security Engineer with a Software Engineering background."
+    />
+    <meta name="twitter:card" content="summary" />
+
+    <link rel="icon" type="image/svg+xml" href="./favicon.jpeg" />
+
     <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="mark" href="#top" aria-label="David Ledesma — home">DL</a>
+        <button
+          id="lang-toggle"
+          class="lang-toggle"
+          type="button"
+          lang="es"
+          aria-label="Switch to Spanish"
+        >
+          ES
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- HERO -->
+      <section id="top" class="hero container">
+        <p class="kicker rise rise-1" data-i18n="hero.location">Valencia, Spain</p>
+        <h1 class="hero-name rise rise-2">David Ledesma</h1>
+        <p class="hero-role rise rise-3" data-i18n="hero.role">
+          Junior ICT Network Security Engineer
+        </p>
+        <p class="hero-pitch rise rise-4" data-i18n="hero.pitch">
+          I sit between software engineering and security operations — building systems,
+          then hardening them.
+        </p>
+        <div class="hero-actions rise rise-5">
+          <a class="btn btn-primary" href="mailto:david.ledesma.moracia@gmail.com" data-i18n="hero.cta.contact">
+            Get in touch
+          </a>
+          <a
+            class="btn"
+            href="https://github.com/daledem"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub
+          </a>
+          <a
+            class="btn"
+            href="https://www.linkedin.com/in/david-ledesma/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </section>
+
+      <!-- ABOUT -->
+      <section class="section container reveal">
+        <h2 class="section-title" data-i18n="about.title">About</h2>
+        <div class="prose">
+          <p data-i18n="about.body">
+            I hold a degree in Software Engineering and I am currently studying a Master's
+            in Cybersecurity and Cyberintelligence. My day-to-day work has been SIEM
+            monitoring, zero-trust identity in Active Directory and network segmentation —
+            the practical side of keeping an infrastructure trustworthy.
+          </p>
+          <p data-i18n="about.body2">
+            Outside of work I run my own hardened lab: self-hosted services, a full SIEM
+            stack and automated deployment, because I would rather learn a system by
+            breaking and rebuilding it.
+          </p>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section class="section container reveal">
+        <h2 class="section-title" data-i18n="experience.title">Experience</h2>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title" data-i18n="experience.ssh.role">
+                Junior ICT Network Security Engineer
+              </h3>
+              <p class="card-org">SSH Team</p>
+            </div>
+            <div class="card-meta">
+              <span data-i18n="experience.ssh.period">2024 — 2025</span>
+              <span lang="es">Logroño</span>
+            </div>
+          </div>
+          <ul class="list">
+            <li data-i18n="experience.ssh.b1">
+              Detected anomalies through SIEM telemetry to pre-empt breaches.
+            </li>
+            <li data-i18n="experience.ssh.b2">
+              Enforced zero-trust IAM in Active Directory: MFA, least privilege, orphaned
+              account removal.
+            </li>
+            <li data-i18n="experience.ssh.b3">
+              Segmented traffic with VLANs, port security and strict ACL enforcement.
+            </li>
+            <li data-i18n="experience.ssh.b4">
+              Documented vulnerabilities and asset lifecycles to speed up incident response.
+            </li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title" data-i18n="experience.dialnet.role">
+                ICT Network Technician (Internship)
+              </h3>
+              <p class="card-org">Dialnet</p>
+            </div>
+            <div class="card-meta">
+              <span data-i18n="experience.dialnet.period">2023</span>
+              <span lang="es">Logroño</span>
+            </div>
+          </div>
+          <ul class="list">
+            <li data-i18n="experience.dialnet.b1">
+              Monitored dashboards to detect and resolve network outages before users
+              reported them.
+            </li>
+            <li data-i18n="experience.dialnet.b2">
+              Verified, labelled and terminated copper and fibre cabling in server racks.
+            </li>
+            <li data-i18n="experience.dialnet.b3">
+              Configured VLANs, switch ports and IP assignments on routers and switches.
+            </li>
+            <li data-i18n="experience.dialnet.b4">
+              Maintained equipment inventories and documented recurring failures.
+            </li>
+          </ul>
+        </article>
+      </section>
+
+      <!-- EDUCATION -->
+      <section class="section container reveal">
+        <h2 class="section-title" data-i18n="education.title">Education</h2>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title" data-i18n="education.upv.degree">
+                MSc Cybersecurity and Cyberintelligence
+              </h3>
+              <p class="card-org" lang="ca">Universitat Politècnica de València</p>
+            </div>
+            <div class="card-meta">
+              <span data-i18n="education.upv.period">2025 — present</span>
+            </div>
+          </div>
+          <p class="card-note" data-i18n="education.upv.note">
+            Threat hunting, incident response, digital forensics, pentesting and OSINT;
+            cryptography, malware analysis; SIEM, SOAR, EDR, IDS/IPS; GDPR, ISO/IEC 27001,
+            NIS2 and ENS.
+          </p>
+        </article>
+
+        <article class="card">
+          <div class="card-head">
+            <div>
+              <h3 class="card-title" data-i18n="education.unir.degree">
+                BSc Software Engineering
+              </h3>
+              <p class="card-org" lang="es">Universidad de La Rioja</p>
+            </div>
+            <div class="card-meta">
+              <span data-i18n="education.unir.period">2021 — 2025</span>
+            </div>
+          </div>
+          <p class="card-note" data-i18n="education.unir.note">
+            Software and applications development and analysis.
+          </p>
+        </article>
+      </section>
+
+      <!-- LAB -->
+      <section class="section container reveal">
+        <h2 class="section-title" data-i18n="lab.title">Self-hosted lab</h2>
+        <div class="panel">
+          <p class="panel-intro" data-i18n="lab.intro">
+            A personal infrastructure I built and hardened end to end — the project I use
+            to test everything I learn.
+          </p>
+          <ul class="list list-tight">
+            <li data-i18n="lab.b1">
+              OpenVPN and Pi-hole for secure remote access and internal service discovery.
+            </li>
+            <li data-i18n="lab.b2">
+              Docker containers on Debian hosting GitLab with CI/CD and a private container
+              registry.
+            </li>
+            <li data-i18n="lab.b3">
+              Elastic SIEM stack for real-time log aggregation and file integrity monitoring.
+            </li>
+            <li data-i18n="lab.b4">
+              UFW firewalls, Let's Encrypt TLS and VLAN segmentation.
+            </li>
+            <li data-i18n="lab.b5">
+              Bash automation for reproducible deployment and fast disaster recovery.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- SKILLS -->
+      <section class="section container reveal">
+        <h2 class="section-title" data-i18n="skills.title">Toolkit</h2>
+
+        <div class="skill-group">
+          <h3 class="skill-label" data-i18n="skills.security">Security</h3>
+          <ul class="chips">
+            <li>SIEM</li>
+            <li>Zero-trust IAM</li>
+            <li>Active Directory</li>
+            <li>VLAN / ACL</li>
+            <li>Elastic</li>
+            <li>ISO/IEC 27001</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-label" data-i18n="skills.infra">Infrastructure</h3>
+          <ul class="chips">
+            <li>Docker</li>
+            <li>Debian</li>
+            <li>GitLab CI/CD</li>
+            <li>OpenVPN</li>
+            <li>Pi-hole</li>
+            <li>UFW</li>
+            <li>Bash</li>
+          </ul>
+        </div>
+
+        <div class="skill-group">
+          <h3 class="skill-label" data-i18n="skills.dev">Development</h3>
+          <ul class="chips">
+            <li>Software Engineering</li>
+            <li>Git</li>
+            <li>Automation</li>
+            <li>Python</li>
+            <li>Java</li>
+            <li>C/C++</li>
+          </ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner reveal">
+        <div>
+          <h2 class="footer-title" data-i18n="footer.title">Let's talk</h2>
+          <p class="footer-body" data-i18n="footer.body">
+            Open to junior security engineering roles and internships.
+          </p>
+        </div>
+        <ul class="footer-links">
+          <li>
+            <a href="mailto:david.ledesma.moracia@gmail.com" data-i18n="footer.email">Email</a>
+          </li>
+          <li>
+            <a href="https://github.com/daledem" target="_blank" rel="noopener noreferrer">
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/david-ledesma/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              LinkedIn
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="container footer-bottom">
+        <p lang="es">Valencia, España</p>
+        <p>© <span id="year">2026</span> David Ledesma</p>
+      </div>
+    </footer>
   </body>
 </html>

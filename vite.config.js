@@ -7,35 +7,54 @@ const root = dirname(fileURLToPath(import.meta.url))
 const PARTIALS_DIR = resolve(root, 'src/partials')
 
 /* ------------------------------------------------------------------ *
- * HTML partials
+ * Change this ONE line when you deploy somewhere new.
  *
- * Lets any page include shared markup at build time:
+ *   GitHub Pages project site  ->  '/your-repo-name/'
+ *   Custom domain / user site  ->  '/'
+ *
+ * Directory-based pages mean relative links cannot work in shared
+ * markup, so the base must be absolute.
+ * ------------------------------------------------------------------ */
+const BASE = '/'
+
+/* ------------------------------------------------------------------ *
+ * HTML partials + {{BASE}} substitution
  *
  *   <!-- @include header.html -->
+ *   <a href="{{BASE}}projects/">
  *
- * The file is inlined into the HTML — no runtime fetch, no flash of
- * unstyled content, and the header/footer are present in the served
- * document for crawlers. Runs in dev and in the production build.
+ * Runs at 'pre' order so the injected markup is still seen by Vite's
+ * own HTML transforms.
  * ------------------------------------------------------------------ */
 
 function htmlPartials() {
+  let base = BASE
+
   return {
     name: 'html-partials',
 
-    transformIndexHtml(html) {
-      return html.replace(
-        /<!--\s*@include\s+([\w./-]+)\s*-->/g,
-        (match, file) => {
-          try {
-            return readFileSync(resolve(PARTIALS_DIR, file), 'utf8')
-          } catch {
-            this.error(`[@include] Could not read partial: ${file}`)
-          }
-        }
-      )
+    configResolved(config) {
+      base = config.base
     },
 
-    // Editing a partial should reload the browser in dev.
+    transformIndexHtml: {
+      order: 'pre',
+      handler(html) {
+        const withPartials = html.replace(
+          /<!--\s*@include\s+([\w./-]+)\s*-->/g,
+          (match, file) => {
+            try {
+              return readFileSync(resolve(PARTIALS_DIR, file), 'utf8')
+            } catch {
+              this.error(`[@include] Could not read partial: ${file}`)
+            }
+          }
+        )
+
+        return withPartials.replaceAll('{{BASE}}', base)
+      },
+    },
+
     handleHotUpdate({ file, server }) {
       if (file.startsWith(PARTIALS_DIR)) {
         server.ws.send({ type: 'full-reload' })
@@ -46,19 +65,19 @@ function htmlPartials() {
 }
 
 export default defineConfig({
-  // Relative base keeps links and assets working on a custom domain,
-  // on username.github.io, and on username.github.io/repo-name/.
-  base: './',
+  // Multi-page site: no history fallback, real 404s.
+  appType: 'mpa',
+
+  base: BASE,
 
   plugins: [htmlPartials()],
 
   build: {
     rollupOptions: {
-      // Every page must be listed here or it will not be built.
-      // Add a line when you add a page.
       input: {
         main: resolve(root, 'index.html'),
-        //projects: resolve(root, 'projects.html'),
+        //projects: resolve(root, 'projects/index.html'),
+        notFound: resolve(root, '404.html'),
       },
     },
   },

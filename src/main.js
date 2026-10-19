@@ -17,6 +17,27 @@ initI18n()
 initReveal()
 initTypewriter()
 
+/* ------------------------------------------------------------------ *
+ * Canonical URLs
+ *
+ * Collapses /index.html and .html suffixes so the address bar always
+ * shows the clean form, whatever was typed or linked.
+ * ------------------------------------------------------------------ */
+
+function canonicaliseUrl() {
+  const { pathname, search, hash } = window.location
+
+  const clean = pathname
+    .replace(/\/index\.html$/, '/')
+    .replace(/\.html$/, '')
+
+  if (clean !== pathname) {
+    window.history.replaceState(null, '', clean + search + hash)
+  }
+}
+
+canonicaliseUrl()
+
 /* --- Footer year --------------------------------------------------- */
 
 const yearEl = document.getElementById('year')
@@ -24,12 +45,15 @@ if (yearEl) yearEl.textContent = String(new Date().getFullYear())
 
 /* --- Mark the current page in the nav ------------------------------ */
 
-const currentPage = window.location.pathname.split('/').pop() || 'index.html'
+function normalisePath(path) {
+  const trimmed = path.replace(/^\/+/, '')
+  return trimmed === '' || trimmed.endsWith('/') ? trimmed + 'index.html' : trimmed
+}
+
+const currentPage = normalisePath(window.location.pathname)
 
 document.querySelectorAll('.site-nav a').forEach((link) => {
-  const target = (link.getAttribute('href') || '')
-    .replace(/^\.\//, '')
-    .split('#')[0]
-
-  if (target === currentPage) link.setAttribute('aria-current', 'page')
+  if (normalisePath(link.pathname) === currentPage) {
+    link.setAttribute('aria-current', 'page')
+  }
 })

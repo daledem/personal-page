@@ -17,6 +17,15 @@
 
 const translations = {
   en: {
+    // Header
+    'nav.label': 'Main',
+    'nav.home': 'Home',
+    'nav.projects': 'Projects',
+
+    switchLabel: 'Switch to Spanish',
+
+
+    // Main Page
     'page.home.title': 'David Ledesma',
     'page.home.description':
       'Cybersecurity student with a Software Engineering background, focused on blue team: detection, monitoring and incident response.',
@@ -24,12 +33,7 @@ const translations = {
     'page.projects.description':
       'Hands-on infrastructure and security work by David Ledesma.',
 
-    switchLabel: 'Switch to Spanish',
     skip: 'Skip to content',
-
-    'nav.label': 'Main',
-    'nav.home': 'Home',
-    'nav.projects': 'Projects',
 
     'hero.location': 'Valencia, Spain',
     'hero.role': 'Cibersecurity Student',
@@ -110,14 +114,30 @@ const translations = {
     'projects.more.body':
       'This page is a starter — add a card per project as you build them. The header and footer are included from shared partials, so a new page only needs its own content.',
 
+    // Footer
     'footer.title': "Let's talk",
     'footer.body': 'Open to junior security engineering roles and internships.',
     'footer.aria.email': 'Email David Ledesma',
     'footer.aria.github': 'GitHub profile',
     'footer.aria.linkedin': 'LinkedIn profile',
+
+    // 404 page
+    'page.404.title': 'Page not found',
+    'page.404.description': 'That page does not exist.',
+    '404.title': 'Page not found',
+    '404.body': 'The link may be broken, or the page may have moved.',
+    '404.cta': 'Back to home',
   },
 
   es: {
+    // Header
+    'nav.label': 'Principal',
+    'nav.home': 'Inicio',
+    'nav.projects': 'Proyectos',
+
+    switchLabel: 'Cambiar a inglés',
+
+    // Main Page
     'page.home.title': 'David Ledesma',
     'page.home.description':
       'Estudiante de ciberseguridad con formación en Ingeniería del Software, orientado al blue team: detección, monitorización y respuesta a incidentes.',
@@ -125,12 +145,7 @@ const translations = {
     'page.projects.description':
       'Trabajo práctico de infraestructura y seguridad de David Ledesma.',
 
-    switchLabel: 'Cambiar a inglés',
     skip: 'Saltar al contenido',
-
-    'nav.label': 'Principal',
-    'nav.home': 'Inicio',
-    'nav.projects': 'Proyectos',
 
     'hero.location': 'Valencia, España',
     'hero.role': 'Estudiante de ciberseguridad',
@@ -215,11 +230,19 @@ const translations = {
     'projects.more.body':
       'Esta página es un punto de partida: añade una tarjeta por cada proyecto según los vayas construyendo. La cabecera y el pie se incluyen desde parciales compartidos, así que una página nueva solo necesita su propio contenido.',
 
+    // Footer
     'footer.title': 'Hablemos',
     'footer.body': 'Abierto a puestos junior de ingeniería de seguridad y a prácticas.',
     'footer.aria.email': 'Enviar correo a David Ledesma',
     'footer.aria.github': 'Perfil de GitHub',
     'footer.aria.linkedin': 'Perfil de LinkedIn',
+
+    // 404 page
+    'page.404.title': 'Página no encontrada',
+    'page.404.description': 'Esa página no existe.',
+    '404.title': 'Página no encontrada',
+    '404.body': 'Puede que el enlace esté roto o que la página se haya movido.',
+    '404.cta': 'Volver al inicio',
   },
 }
 

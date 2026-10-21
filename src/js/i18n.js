@@ -33,8 +33,6 @@ const translations = {
     'page.projects.description':
       'Hands-on infrastructure and security work by David Ledesma.',
 
-    skip: 'Skip to content',
-
     'hero.location': 'Valencia, Spain',
     'hero.role': 'Cibersecurity Student',
     'hero.pitch':
@@ -160,8 +158,6 @@ const translations = {
     'page.projects.title': 'Proyectos',
     'page.projects.description':
       'Trabajo práctico de infraestructura y seguridad de David Ledesma.',
-
-    skip: 'Saltar al contenido',
 
     'hero.location': 'Valencia, España',
     'hero.role': 'Estudiante de ciberseguridad',

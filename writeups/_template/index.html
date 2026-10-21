@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+
+    <!-- @include head.html -->
+
+    <!-- Shown in the browser tab. -->
+    <title>Challenge Name</title>
+    <meta name="description" content="Write-up for Challenge Name, from Hack The Box." />
+    <meta name="author" content="David Ledesma" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- ------------------------------------------------------------------
+         Index metadata. The build reads these to build writeups/index.html.
+         writeup:title is REQUIRED — a directory without it is skipped.
+         writeup:summary is optional; it is truncated to ~150 characters.
+         writeup:date must be YYYY-MM-DD for sorting to work.
+         ------------------------------------------------------------------ -->
+    <meta name="writeup:title" content="Challenge Name" />
+    <meta name="writeup:origin" content="Hack The Box" />
+    <meta name="writeup:date" content="2026-10-21" />
+    <meta
+      name="writeup:summary"
+      content="One or two sentences on what the challenge is and what the key idea turned out to be."
+    />
+  </head>
+
+  <body data-page="writeup">
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+    <!-- @include header.html -->
+
+    <main id="main">
+      <section class="hero container">
+        <p class="kicker rise rise-1">
+          <a href="{{BASE}}writeups/">
+            &larr; <span data-i18n="writeups.back">Write-ups</span>
+          </a>
+        </p>
+
+        <h1 class="hero-name page-title rise rise-2">Challenge Name</h1>
+
+        <p class="writeup-origin rise rise-3">Hack The Box</p>
+
+        <p class="writeup-intro rise rise-4">
+          A short introduction before the write-up itself: what the challenge is, what
+          category it belongs to, and what the core idea turned out to be. Two or three
+          sentences is enough — the detail belongs below.
+        </p>
+      </section>
+
+      <section class="container reveal">
+        <!--
+          Write in ONE language and set lang to match, so screen readers
+          pronounce it correctly (WCAG 3.1.2). The chrome around it
+          (nav, footer) still translates; the article body does not.
+        -->
+        <article class="article" lang="en">
+          <h2>Recon</h2>
+          <p>
+            What you were given, and what the first useful observation was. Keep commands
+            in <code>inline code</code> and longer output in a block:
+          </p>
+
+          <pre><code>nmap -sC -sV -p- --min-rate 2000 10.10.10.10</code></pre>
+
+          <p>
+            Then what the output told you. Link to references when a technique was new:
+            <a href="https://example.com" rel="noopener noreferrer">further reading</a>.
+          </p>
+
+          <h2>Exploitation</h2>
+          <p>
+            The path you actually took — not the tidy version. Note the dead ends briefly;
+            they are the useful part for anyone reading later.
+          </p>
+
+          <h2>Privilege escalation</h2>
+          <p>
+            How you got from a low-privilege foothold to the objective, and what you would
+            check first next time.
+          </p>
+
+          <h2>Takeaways</h2>
+          <ul>
+            <li>The technique worth remembering.</li>
+            <li>The tool that made it fast.</li>
+            <li>The mistake that cost the most time.</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+
+    <!-- @include footer.html -->
+  </body>
+</html>

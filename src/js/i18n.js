@@ -279,6 +279,59 @@ const translations = {
 }
 
 /* ------------------------------------------------------------------ *
+ * Per-write-up translations
+ *
+ * Each write-up keeps its strings next to its page:
+ *
+ *   writeups/<slug>/index.html
+ *   writeups/<slug>/i18n.js      <- export default { en: {...}, es: {...} }
+ *
+ * import.meta.glob is lazy, so every file becomes its own chunk. The main
+ * bundle does not grow as write-ups are added, and a visitor only
+ * downloads translations for the page they are actually on.
+ *
+ * Because only ONE file is ever merged in at a time, every write-up can
+ * reuse the same keys (`page.writeup.title`, etc.) without colliding.
+ * ------------------------------------------------------------------ */
+
+const pageModules = import.meta.glob([
+  '/writeups/*/i18n.js',
+  '!/writeups/_*/i18n.js', // skip _template
+])
+
+let pageDict = { en: {}, es: {} }
+
+function currentSlug() {
+  const match = window.location.pathname.match(/\/writeups\/([^/]+)/)
+  return match ? match[1] : null
+}
+
+async function loadPageTranslations() {
+  const slug = currentSlug()
+  if (!slug) return
+
+  const loader = pageModules[`/writeups/${slug}/i18n.js`]
+  if (!loader) return
+
+  try {
+    const mod = await loader()
+    const loaded = mod.default ?? {}
+    pageDict = {
+      en: loaded.en ?? {},
+      es: loaded.es ?? {},
+    }
+  } catch (error) {
+    // Missing or broken file: the page falls back to its inline HTML text.
+    console.warn(`[i18n] could not load translations for "${slug}"`, error)
+  }
+}
+
+/* Global strings, overridden by whatever the current page brings. */
+function dictFor(lang) {
+  return { ...translations[lang], ...pageDict[lang] }
+}
+
+/* ------------------------------------------------------------------ *
  * Detection
  *
  * Precedence:
@@ -336,7 +389,7 @@ function detectLanguage() {
 let currentLanguage = detectLanguage()
 
 export function applyLanguage(lang) {
-  const dict = translations[lang]
+  const dict = dictFor(lang)
   if (!dict) return
 
   // WCAG 3.1.1 — the page language must be programmatically determinable.
@@ -378,7 +431,15 @@ export function applyLanguage(lang) {
 }
 
 export function initI18n() {
+  // Apply immediately: the HTML already holds English text, so nothing
+  // flashes empty while the page's own file is fetched.
   applyLanguage(currentLanguage)
+
+  // Then swap in the write-up's strings once they arrive. Re-applying is
+  // idempotent — on non-write-up pages it changes nothing.
+  loadPageTranslations().then(() => {
+    applyLanguage(currentLanguage)
+  })
 
   const toggle = document.getElementById('lang-toggle')
 

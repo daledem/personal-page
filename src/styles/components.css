@@ -748,9 +748,9 @@
   border-left-color: var(--accent);
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 1024px) {
   .section.section--article {
-    grid-template-columns: 0px minmax(0, 1fr) 200px;
+    grid-template-columns: 0px minmax(0, 1fr) 0.5fr;
     column-gap: clamp(24px, 3vw, 48px);
   }
 

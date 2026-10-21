@@ -12,10 +12,15 @@ import './styles/index.css'
 
 import { initI18n } from './js/i18n.js'
 import { initReveal, initTypewriter } from './js/motion.js'
+import { initToc } from './js/toc.js'
+
+const page = document.body.dataset.page
+const slug = document.body.dataset.writeup
 
 initI18n()
 initReveal()
 initTypewriter()
+initToc()
 
 /* ------------------------------------------------------------------ *
  * Canonical URLs

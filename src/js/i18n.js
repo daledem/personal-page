@@ -140,6 +140,9 @@ const translations = {
     'writeups.listTitle': 'Published',
     'writeups.empty': 'No write-ups published yet.',
     'writeups.back': 'Writeups',
+
+
+    'writeups.toc': 'On this page',
   },
 
   es: {
@@ -269,6 +272,9 @@ const translations = {
     'writeups.listTitle': 'Publicados',
     'writeups.empty': 'Todavía no hay write-ups publicados.',
     'writeups.back': 'Writeups',
+
+
+    'writeups.toc': 'En esta página',
   },
 }
 
@@ -338,8 +344,12 @@ export function applyLanguage(lang) {
   document.documentElement.dataset.lang = lang
 
   document.querySelectorAll('[data-i18n]').forEach((el) => {
+    // Remember the markup's own text the first time we see this element.
+    if (!el.dataset.i18nOriginal) {
+      el.dataset.i18nOriginal = el.textContent
+    }
     const value = dict[el.dataset.i18n]
-    if (typeof value === 'string') el.textContent = value
+    el.textContent = typeof value === 'string' ? value : el.dataset.i18nOriginal
   })
 
   // Icon-only links have no text to translate, so their accessible name

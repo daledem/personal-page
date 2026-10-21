@@ -66,9 +66,9 @@
 
 /* The name takes ~770ms (14 chars x 55ms) starting at 240ms, so the
    rest of the hero is sequenced after it rather than overlapping. */
-.rise-3 { animation-delay: 1000ms; }
-.rise-4 { animation-delay: 1150ms; }
-.rise-5 { animation-delay: 1300ms; }
+body[data-page='home'] .rise-3 { animation-delay: 1000ms; }
+body[data-page='home'] .rise-4 { animation-delay: 1150ms; }
+body[data-page='home'] .rise-5 { animation-delay: 1300ms; }
 
 /* --- Reduced motion ----------------------------------------------- */
 

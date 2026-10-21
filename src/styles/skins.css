@@ -1,0 +1,252 @@
+/* ================================================================== *
+ * SKIN — sharp / young
+ *
+ * Visual overrides only. Layout (grid, rail, columns) lives in
+ * components.css and is untouched here, so this file is safe to delete.
+ *
+ * Imported LAST in index.css so it wins at equal specificity.
+ * ================================================================== */
+
+/* --- Rhythm: denser ----------------------------------------------- */
+
+.section {
+  padding-block: clamp(28px, 4.5vh, 44px);
+}
+
+.card {
+  padding: 20px;
+  border-radius: var(--radius);
+  transition: border-color var(--dur) var(--ease),
+    box-shadow var(--dur) var(--ease);
+}
+
+.card + .card {
+  margin-top: 10px;
+}
+
+.panel {
+  padding: 22px;
+  border-radius: var(--radius);
+  /* Flat with a hard accent edge instead of a soft gradient */
+  background: var(--surface);
+  border-left: 2px solid var(--accent);
+}
+
+/* --- Section titles become numbered ------------------------------- */
+
+main {
+  counter-reset: section;
+}
+
+.section {
+  counter-increment: section;
+}
+
+.section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 18px;
+  letter-spacing: 0.14em;
+}
+
+.section-title::before {
+  content: counter(section, decimal-leading-zero);
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  opacity: 0.85;
+}
+
+.section-title::after {
+  content: '';
+  flex: 1;
+  height: var(--hairline);
+  background: var(--border);
+}
+
+/* The rule would collide with content in the wide grid rail. */
+@media (min-width: 1024px) {
+  .section-title::after {
+    display: none;
+  }
+}
+
+/* --- Hero: the one confident accent ------------------------------- */
+
+.hero-role {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-family: var(--font-mono);
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 20px;
+}
+
+.hero-role::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.hero-name {
+  letter-spacing: -0.02em;
+  font-weight: 375;
+}
+
+.hero-pitch {
+  color: var(--text);
+  opacity: 0.82;
+}
+
+/* --- Buttons: square, fast --------------------------------------- */
+
+.btn {
+  border-radius: var(--radius-sm);
+  padding: 9px 18px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.btn:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 2px 2px 0 0 color-mix(in srgb, var(--accent) 45%, transparent);
+}
+
+.btn-primary:hover {
+  transform: translate(-1px, -1px);
+  filter: none;
+  box-shadow: 2px 2px 0 0 color-mix(in srgb, var(--text) 18%, transparent);
+}
+
+/* --- Cards: hard edge on hover, no lift -------------------------- */
+
+.card:hover {
+  transform: none;
+  border-color: color-mix(in srgb, var(--accent) 40%, var(--border));
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.card-head {
+  padding-bottom: 12px;
+  margin-bottom: 14px;
+  border-bottom: var(--hairline) solid var(--border);
+}
+
+.card-title {
+  font-size: 0.98rem;
+  letter-spacing: 0;
+}
+
+.card-org {
+  font-size: 0.845rem;
+  margin-top: 2px;
+}
+
+.card-meta {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* --- Chips: square, mono, quieter -------------------------------- */
+
+.chips {
+  gap: 6px;
+}
+
+.chips li {
+  border-radius: var(--radius-sm);
+  padding: 4px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.735rem;
+  letter-spacing: 0.02em;
+  transition: border-color var(--dur) var(--ease), color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.chips li:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  background: var(--accent-soft);
+}
+
+.skill-label {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  margin-bottom: 9px;
+}
+
+/* --- Header: squared toggle, crisper nav ------------------------- */
+
+.lang-toggle {
+  border-radius: var(--radius-sm);
+  padding: 5px 11px;
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  transition: color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease),
+    background-color var(--dur) var(--ease);
+}
+
+.site-nav a {
+  font-size: 0.82rem;
+  font-weight: 500;
+  border-bottom-width: 2px;
+  border-bottom-color: transparent;
+  padding-block: 3px;
+  transition: color var(--dur) var(--ease),
+    border-color var(--dur) var(--ease);
+}
+
+/* --- Reveal: shorter travel, faster ------------------------------ */
+
+.reveal {
+  transform: translateY(8px);
+  transition: opacity 400ms var(--ease), transform 400ms var(--ease);
+}
+
+.reveal.is-visible {
+  transform: none;
+}
+
+/* --- 404 numeral -------------------------------------------------- */
+
+.error-code {
+  color: var(--border);
+  letter-spacing: -0.06em;
+}
+
+/* ================================================================== *
+ * MUST BE LAST.
+ *
+ * skin.css is imported after motion.css, so the rules above override
+ * motion.css at equal specificity — including its reduced-motion block.
+ * Without this, the shorter .reveal transition would silently re-enable
+ * motion for users who asked for none.
+ * ================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .rise,
+  .reveal {
+    animation: none;
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .btn:hover,
+  .card:hover {
+    transform: none;
+    box-shadow: none;
+  }
+}

@@ -127,6 +127,27 @@ const translations = {
     '404.title': 'Page not found',
     '404.body': 'The link may be broken, or the page may have moved.',
     '404.cta': 'Back to home',
+
+    // Write Ups index
+    'page.writeups.title': 'Write-ups',
+    'page.writeups.description':
+      'Notes on infrastructure, security and things I break on purpose.',
+    'page.writeupLab.title': 'Building and hardening a self-hosted lab',
+    'page.writeupLab.description':
+      'OpenVPN, Pi-hole, GitLab CI/CD and an Elastic SIEM stack on Debian.',
+
+    'nav.writeups': 'Write-ups',
+
+    'writeups.kicker': 'Notes',
+    'writeups.title': 'Write-ups',
+    'writeups.pitch':
+      'Longer notes on things I build, break and fix. Mostly infrastructure and security.',
+    'writeups.listTitle': 'Published',
+    'writeups.lab.title': 'Building and hardening a self-hosted lab',
+    'writeups.lab.summary':
+      'OpenVPN, Pi-hole, GitLab CI/CD and an Elastic SIEM stack on Debian — what I run, what broke, and how it is segmented.',
+    'writeups.back': 'Write-ups',
+    'writeups.articleLabel': 'Write-up',
   },
 
   es: {
@@ -243,6 +264,28 @@ const translations = {
     '404.title': 'Página no encontrada',
     '404.body': 'Puede que el enlace esté roto o que la página se haya movido.',
     '404.cta': 'Volver al inicio',
+
+    // Write Ups index
+    'page.writeups.title': 'Write-ups — David Ledesma',
+    'page.writeups.description':
+      'Notas sobre infraestructura, seguridad y cosas que rompo a propósito.',
+    'page.writeupLab.title':
+      'Construir y endurecer un laboratorio autoalojado — David Ledesma',
+    'page.writeupLab.description':
+      'OpenVPN, Pi-hole, GitLab CI/CD y una pila SIEM Elastic sobre Debian.',
+
+    'nav.writeups': 'Write-ups',
+
+    'writeups.kicker': 'Notas',
+    'writeups.title': 'Write-ups',
+    'writeups.pitch':
+      'Notas más largas sobre lo que construyo, rompo y arreglo. Sobre todo infraestructura y seguridad.',
+    'writeups.listTitle': 'Publicados',
+    'writeups.lab.title': 'Construir y endurecer un laboratorio autoalojado',
+    'writeups.lab.summary':
+      'OpenVPN, Pi-hole, GitLab CI/CD y una pila SIEM Elastic sobre Debian: qué ejecuto, qué se rompió y cómo está segmentado.',
+    'writeups.back': 'Write-ups',
+    'writeups.articleLabel': 'Artículo',
   },
 }
 

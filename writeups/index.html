@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" data-lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Write-ups — David Ledesma</title>
+    <meta
+      name="description"
+      content="Notes on infrastructure, security and things I break on purpose."
+    />
+    <meta name="author" content="David Ledesma" />
+    <meta name="color-scheme" content="dark light" />
+
+    <link rel="icon" type="image/svg+xml" href="{{BASE}}favicon.svg" />
+
+    <script type="module" src="/src/main.js"></script>
+  </head>
+
+  <body data-page="writeups">
+    <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+
+    <!-- @include header.html -->
+
+    <main id="main">
+      <section class="hero container">
+        <p class="kicker rise rise-1" data-i18n="writeups.kicker">Notes</p>
+        <h1 class="hero-name page-title rise rise-2" data-i18n="writeups.title">
+          Write-ups
+        </h1>
+        <p class="hero-pitch rise rise-3" data-i18n="writeups.pitch">
+          Longer notes on things I build, break and fix. Mostly infrastructure and
+          security.
+        </p>
+      </section>
+
+      <section class="section container reveal">
+        <h2 class="section-title" data-i18n="writeups.listTitle">Published</h2>
+
+        <ul class="writeup-list">
+          <li>
+            <a class="writeup-item" href="{{BASE}}writeups/self-hosted-lab/">
+              <time class="writeup-date" datetime="2026-10-21">2026-10-21</time>
+              <div class="writeup-body">
+                <h3 class="writeup-title" data-i18n="writeups.lab.title">
+                  Building and hardening a self-hosted lab
+                </h3>
+                <p class="writeup-summary" data-i18n="writeups.lab.summary">
+                  OpenVPN, Pi-hole, GitLab CI/CD and an Elastic SIEM stack on Debian —
+                  what I run, what broke, and how it is segmented.
+                </p>
+                <ul class="writeup-tags">
+                  <li>Infrastructure</li>
+                  <li>Docker</li>
+                  <li>SIEM</li>
+                </ul>
+              </div>
+            </a>
+          </li>
+
+          <!--
+            New entries go ABOVE this comment, newest first.
+            Copy the <li> block, change the href, the <time> and the text.
+            Tags are not translated by design.
+          -->
+        </ul>
+      </section>
+    </main>
+
+    <!-- @include footer.html -->
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<!--
+  Shared <head> contents. Inlined by the same @include mechanism as the
+  header and footer.
+
+  ONLY put values here that are identical on every page. Anything that
+  varies — title, description, Open Graph tags, writeup:* metadata —
+  belongs in the page itself.
+
+  {{BASE}} works here: the plugin inlines partials first, then
+  substitutes, so placeholders inside this file are resolved.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link
+    href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&family=Geist+Mono:wght@100..900&display=swap"
+    rel="stylesheet"
+/>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="author" content="David Ledesma" />
+<meta name="color-scheme" content="dark light" />
+
+<link rel="icon" type="image/svg+xml" href="{{BASE}}favicon.jpeg" />
+
+<script type="module" src="/src/main.js"></script>
